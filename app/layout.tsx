@@ -1,12 +1,17 @@
-import { Inter as FontSans } from "next/font/google";
+import { Inter as FontSans, Montserrat, Open_Sans } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
 
-const fonstSans = FontSans({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-montserrat",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-open-sans",
 });
 
 export default function RootLayout({
@@ -16,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn("font-sans antialiased", fonstSans.variable)}>
+      <body className={cn("font-sans antialiased", montserrat.variable, openSans.variable, "font-open-sans")}>
         {children}
       </body>
     </html>

@@ -1,76 +1,71 @@
 import Image from "next/image";
-import React from "react";
 
 export default function Contact() {
   return (
-    <section className="my-10">
-      <div className="flex md:justify-around md:items-center justify-center">
-        <div>
+    <section className="container mx-auto px-4 py-16 md:py-24">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+        <div className="w-full lg:w-1/2">
           <Image
             src="/getintouch.svg"
-            width={400}
+            width={500}
             height={500}
-            alt="intro image"
-            className="hidden md:block"
+            alt="Contáctenos"
+            className="w-full h-auto max-w-lg mx-auto"
+            priority
           />
         </div>
-        <div>
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Póngase en contacto con nosotros
+
+        <div className="w-full lg:w-1/2 max-w-xl">
+          <h2 className="font-montserrat text-6xl  text-[#000000] font-bold mb-8 text-center lg:text-left">
+            Póngase en contacto
           </h2>
-          <form>
-            <div className="flex gap-6">
-              <div className="mb-6">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+          
+          <form className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-xl font-medium text-black">
                   Nombre
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  className="border border-gray-400 rounded-md w-full py-2 px-3 focus:outline-none focus:border-blue-500 mb-2"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#085078] focus:ring-2 focus:ring-[#085078]/20 transition-colors"
                 />
               </div>
-              <div className="mb-6">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+              
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-xl font-medium text-black">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  className="border border-gray-400 rounded-md w-full py-2 px-3 focus:outline-none focus:border-blue-500 mb-2"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#085078] focus:ring-2 focus:ring-[#085078]/20 transition-colors"
                 />
               </div>
             </div>
-            <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
+
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-xl font-medium text-black">
                 Mensaje
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={4}
-                className="border border-gray-400 rounded-md w-full py-2 px-3 focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#085078] focus:ring-2 focus:ring-[#085078]/20 transition-colors"
               ></textarea>
             </div>
-            
-          </form>
-          <button
-              className="mt-[2rem]  hover:bg-[#4aa59a] font-bold py-2
-          px-4 border-2 border-[#085078] rounded uppercase"
+
+            <button
+              type="submit"
+              className="text-xl w-full bg-[#085078] text-white hover:bg-[#4aa59a] transition-colors duration-300 font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1"
             >
               Enviar mensaje
             </button>
+          </form>
         </div>
       </div>
     </section>

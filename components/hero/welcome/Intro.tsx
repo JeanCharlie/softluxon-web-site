@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Intro() {
   return (
@@ -22,18 +23,21 @@ export default function Intro() {
                 <span className="absolute bottom-0 left-0 w-full h-3 bg-[#85d8ce] opacity-30 transform -rotate-2"></span>
               </span>
             </h1>
-            
+
             <p className="text-white/90 text-xl md:text-2xl leading-relaxed max-w-2xl">
-              Potenciamos tu presencia digital con soluciones innovadoras y 
-              personalizadas. Transformamos tu visión en resultados tangibles, 
+              Potenciamos tu presencia digital con soluciones innovadoras y
+              personalizadas. Transformamos tu visión en resultados tangibles,
               impulsando el crecimiento de tu negocio en la era digital.
             </p>
-            
-           
 
-            <button className="text-xl mt-8 bg-[#085078] text-white hover:bg-[#4aa59a] transition-colors duration-300 font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1">
-            Contáctenos
-          </button>
+            <button
+              className=" text-xl mt-8 bg-[#085078] text-white hover:bg-[#4aa59a] transition-colors duration-300 font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1"
+            >
+              <Link
+              href="/contact">
+              Contáctenos
+              </Link>
+            </button>
           </div>
 
           {/* Imagen */}

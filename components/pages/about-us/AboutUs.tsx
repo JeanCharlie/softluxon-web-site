@@ -164,7 +164,7 @@ export default function AboutUs() {
               Descubre cómo podemos ayudarte a alcanzar tus objetivos tecnológicos
             </p>
             <Link
-              href="/contacto"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold bg-white text-[#085078] rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
             >
               Contáctenos

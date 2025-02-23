@@ -8,6 +8,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { Container } from "../ui/Container";
+import Link from "next/link";
 
 export default function Services() {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -78,19 +79,20 @@ export default function Services() {
           >
             <CarouselContent>
               {services.map((service, index) => (
-                <CarouselItem
-                  key={index}
-                  className="md:basis-1/2 lg:basis-1/3"
-                >
-                  <Card className="border-none bg-gradient-to-br from-[#085078] to-[#4aa59a] text-white transform transition-transform hover:scale-105">
-                    <CardContent className="flex flex-col items-center justify-center p-8 space-y-4 min-h-[300px]">
-                      <span className="text-4xl mb-4">{service.icon}</span>
-                      <h3 className="text-3xl font-semibold">{service.title}</h3>
-                      <p className="text-xl text-center text-white/90">
-                        {service.description}
-                      </p>
-                    </CardContent>
-                  </Card>
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <Link href="/services">
+                    <Card className="border-none bg-gradient-to-br from-[#085078] to-[#4aa59a] text-white transform transition-transform hover:scale-105">
+                      <CardContent className="flex flex-col items-center justify-center p-8 space-y-4 min-h-[300px]">
+                        <span className="text-4xl mb-4">{service.icon}</span>
+                        <h3 className="text-3xl font-semibold">
+                          {service.title}
+                        </h3>
+                        <p className="text-xl text-center text-white/90">
+                          {service.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 </CarouselItem>
               ))}
             </CarouselContent>

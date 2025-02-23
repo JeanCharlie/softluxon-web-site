@@ -1,7 +1,36 @@
+"use client";
+
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import Image from "next/image";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      setSubmitStatus("success");
+      setFormData({ email: "", message: "" });
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus("idle"), 3000);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
   return (
     <section>
       <Container className="pt-12 pb-16 md:pb-24">
@@ -21,12 +50,9 @@ export default function Contact() {
             <h2 className="font-montserrat text-6xl text-[#000000] font-bold mb-8 text-center lg:text-left">
               Póngase en contacto
             </h2>
-            <form className="max-w-sm mx-auto">
+            <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
               <div className="mb-6">
-                <label
-                  htmlFor="email"
-                  className="text-xl font-medium text-black"
-                >
+                <label htmlFor="email" className="text-xl font-medium text-black">
                   Email
                 </label>
                 <div className="relative">
@@ -43,23 +69,27 @@ export default function Contact() {
                     </svg>
                   </div>
                   <input
-                    type="text"
-                    id="email-address-icon"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="tu@gmail.com"
                   />
                 </div>
               </div>
 
               <div className="mb-8">
-                <label
-                  htmlFor="message"
-                  className="text-xl font-medium text-black"
-                >
+                <label htmlFor="message" className="text-xl font-medium text-black">
                   Mensaje
                 </label>
                 <textarea
                   id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Deja un mensaje..."
                 />
@@ -67,12 +97,26 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="text-xl w-full bg-[#085078] text-white hover:bg-[#4aa59a] transition-colors duration-300 font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                disabled={isSubmitting}
+                className="text-xl w-full bg-[#085078] text-white hover:bg-[#4aa59a] transition-colors duration-300 font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Enviar mensaje
+                {isSubmitting ? (
+                  <div className="flex items-center justify-center">
+                    <span>Enviando...</span>
+                  </div>
+                ) : (
+                  "Enviar mensaje"
+                )}
               </button>
-            </form>
 
+              {submitStatus === "success" && (
+                <p className="text-green-600 text-center mt-4">¡Mensaje enviado con éxito!</p>
+              )}
+
+              {submitStatus === "error" && (
+                <p className="text-red-600 text-center mt-4">Error al enviar el mensaje.</p>
+              )}
+            </form>
           </div>
         </div>
       </Container>

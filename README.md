@@ -37,7 +37,7 @@ Este proyecto **no tiene fines comerciales ni reales**. Es una simulación de c�
 
 1. Clona el repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/tu-usuario/softluxon.git
+   git clone https://github.com/JeanCharlie/softluxon-web-site.git
 2. Entra en la carpeta del proyecto:
    ```bash
    cd softluxon

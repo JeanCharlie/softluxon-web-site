@@ -12,7 +12,7 @@ export default function Footer() {
                 Softluxon
               </h2>
               <p className="max-w-[15rem] text-gray-300 mb-6">
-                Empresa de desarrollo de software en Cuba. Ofrecemos soluciones
+                Empresa de desarrollo de software. Ofrecemos soluciones
                 personalizadas para satisfacer las necesidades de nuestros
                 clientes. Desde aplicaciones móviles hasta sistemas
                 empresariales.
@@ -37,22 +37,22 @@ export default function Footer() {
             </h2>
             <ul className="text-gray-300 font-medium">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="/about-us" className="hover:underline">
                   Quiénes somos
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="/services" className="hover:underline">
                   Qué hacemos
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="/contact" className="hover:underline">
                   Únete al equipo
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
+                <a href="/" className="hover:underline">
                   Actualidad de SoftLuxon
                 </a>
               </li>

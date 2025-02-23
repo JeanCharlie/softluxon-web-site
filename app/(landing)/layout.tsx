@@ -1,12 +1,12 @@
-import TopBar from "@/components/ui/topbar/TopBar";
-import Footer from "@/components/ui/footer/Footer";
+// import TopBar from "@/components/ui/topbar/TopBar";
+// import Footer from "@/components/ui/footer/Footer";
 
 export default function HomePage({ children }: { children: React.ReactNode }) {
   return (
     <main>
-      <TopBar />
+      {/* <TopBar /> */}
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }

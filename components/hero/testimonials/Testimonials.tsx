@@ -1,24 +1,37 @@
+"use client"
 import React from "react";
 import { clients } from "@/app/utils/constants/consts";
-
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { Container } from "@/components/ui/Container";
 
 export default function Testimonials() {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
-    <section className="h-screen border-y-[#085078] ">
-      <div>
-        <p className="border-l-2 border-t-2 rounded-md p-2 border-[#085078] max-w-[15rem] ml-[8rem] text-xl text-white font-bold">
+    <section className="border-y-[#085078]">
+      <Container className="pb-16 md:pb-24">
+        <p className="border-l-2 border-t-2 rounded-md p-2 border-[#085078] max-w-[15rem] text-xl text-white font-bold">
           Las opiniones de nuestros clientes son muy importantes para nosotros
         </p>
-        <p className="ml-[8rem] mb-[3rem] text-[3rem] font-bold">
+        <p className="mb-[3rem] text-[3rem] font-bold">
           Ellos han dicho...{" "}
         </p>
 
@@ -27,9 +40,9 @@ export default function Testimonials() {
             opts={{
               align: "start",
             }}
-            className="flex justify-center w-full relative"
+            setApi={setApi}
+            className="w-full"
           >
-            <CarouselPrevious className="absolute left-4 z-10" />
             <CarouselContent>
               {clients.map((client) => (
                 <CarouselItem
@@ -38,7 +51,7 @@ export default function Testimonials() {
                 >
                   <div>
                     <Card className="border-none w-[18rem] h-auto -mx-[2rem] bg-[#27607e]">
-                      <CardContent className="flex flex-col items-center justify-center p-6 text-white ">
+                      <CardContent className="flex flex-col items-center justify-center p-6 text-white">
                         <div className="mb-4">
                           <Image
                             src={client.avatar}
@@ -61,10 +74,25 @@ export default function Testimonials() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselNext className="absolute right-4 z-10" />
           </Carousel>
+
+          {/* Dot indicators */}
+          <div className="flex justify-center gap-2 mt-8">
+            {clients.map((_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  index === current
+                    ? "bg-[#27607e] w-6"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                onClick={() => api?.scrollTo(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

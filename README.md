@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyecto de Sitio Web de SoftLuxon (Práctica)
 
-## Getting Started
+Este es un **proyecto de práctica** desarrollado con **Next.js** para simular el sitio web de una empresa de software ficticia llamada **SoftLuxon**. El objetivo de este proyecto es practicar el desarrollo de aplicaciones web y familiarizarse con tecnologías modernas, pero **toda la información contenida en este sitio no es real**.
 
-First, run the development server:
+## Descripción
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este sitio web simula ser la página de **SoftLuxon**, una empresa de software ficticia dedicada a ofrecer soluciones tecnológicas avanzadas. El sitio web incluye varias secciones como:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Inicio**
+- **Servicios**
+- **Sobre nosotros**
+- **Blog**
+- **Contáctenos**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**SoftLuxon** es una empresa **ficticia** y **todos los servicios que ofrece no son reales**. Este proyecto está destinado exclusivamente a la práctica y aprendizaje en desarrollo web, por lo que **no tiene fines comerciales ni reales**.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Características
 
-## Learn More
+- **Página de inicio**: Introducción general sobre SoftLuxon.
+- **Servicios**: Detalles sobre los servicios ofrecidos por la empresa (ficticios).
+- **Sobre nosotros**: Información ficticia acerca de la misión, visión y valores de SoftLuxon.
+- **Blog**: Un blog simulado con artículos sobre tecnología y desarrollo.
+- **Formulario de contacto**: Un formulario de contacto simulado para practicar la gestión de formularios.
 
-To learn more about Next.js, take a look at the following resources:
+## Tecnologías Usadas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js**: Framework de React para la creación de sitios web.
+- **Tailwind CSS**: Utilizado para el diseño y estilización del sitio web.
+- **ShadCN**: Biblioteca para componentes UI personalizables y accesibles.
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Propósito del Proyecto
 
-## Deploy on Vercel
+Este proyecto **no tiene fines comerciales ni reales**. Es una simulación de cómo podría ser un sitio web de una empresa de software llamada **SoftLuxon**. El propósito principal es **aprender y practicar tecnologías de desarrollo web modernas** como **Next.js**, **Tailwind CSS**, y **ShadCN**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Cómo Correr el Proyecto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clona el repositorio en tu máquina local:
+   ```bash
+   git clone https://github.com/tu-usuario/softluxon.git
+2. Entra en la carpeta del proyecto:
+   ```bash
+   cd softluxon
+3. Instala las dependencias:
+   ```bash
+   npm install
+4. Corre el servidor de desarrollo:
+   ```bash
+   npm run dev
+ 

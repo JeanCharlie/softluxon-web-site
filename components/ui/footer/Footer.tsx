@@ -1,13 +1,15 @@
 import { services } from "@/app/utils/constants/consts";
+import { Container } from "../Container";
+
 export default function Footer() {
   return (
     <footer className="gradient-dark-blue">
-      <div>
+      <Container>
         <div className="grid grid-cols-2 gap-20 px-4 py-6 lg:py-8 md:grid-cols-3">
           <div>
             <div>
               <h2 className="text-white border-b-[0.1rem] mb-6 border-gray-500 text-xl font-semibold uppercase dark:text-white">
-                Alsoftpro
+                Softluxon
               </h2>
               <p className="max-w-[15rem] text-gray-300 mb-6">
                 Empresa de desarrollo de software en Cuba. Ofrecemos soluciones
@@ -23,7 +25,7 @@ export default function Footer() {
               </h2>
               <div className="space-y-2">
                 <p>3ra y 28, Miramar, Playa, La Habana</p>
-                <p>alsoftproempresa@gmail.com</p>
+                <p>softluxonempresa@gmail.com</p>
                 <p>+53 #### ####</p>
               </div>
             </div>
@@ -51,7 +53,7 @@ export default function Footer() {
               </li>
               <li className="mb-4">
                 <a href="#" className="hover:underline">
-                  Actualidad de Alsoftpro
+                  Actualidad de SoftLuxon
                 </a>
               </li>
             </ul>
@@ -71,10 +73,10 @@ export default function Footer() {
         </div>
         <div className="py-6 bg-[#085078] flex items-center justify-center">
           <span className="text-sm text-white  sm:text-center">
-            © 2024 <a href="#"> Alsoftpro</a>. Todos los derechos reservados.
+            © {new Date().getFullYear()} <a href="#"> SoftLuxon</a>. Todos los derechos reservados.
           </span>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

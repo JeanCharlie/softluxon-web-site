@@ -37,3 +37,18 @@
   z-index: -1;
   transform: scaleY(0.7);
 }
+
+
+
+@layer base {}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

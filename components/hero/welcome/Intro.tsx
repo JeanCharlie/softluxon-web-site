@@ -1,5 +1,6 @@
 "use client";
 
+import { Container } from "@/components/ui/Container";
 import Image from "next/image";
 
 export default function Intro() {
@@ -10,7 +11,7 @@ export default function Intro() {
         clipPath: "polygon(100% 0%, 100% 92%, 50% 100%, 0 95%, 0 0)",
       }}
     >
-      <div className="max-w-7xl  mx-auto px-4 py-8 md:py-12">
+      <Container className="py-8 md:py-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Contenido textual */}
           <div className="w-full lg:w-1/2 space-y-6">
@@ -49,7 +50,7 @@ export default function Intro() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

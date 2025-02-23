@@ -1,16 +1,18 @@
 "use client";
+import { Container } from "@/components/ui/Container";
 import Stats from "@/components/ui/stats/Stats";
 import Image from "next/image";
 
 export default function Workflow() {
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-br from-[#085078] to-[#4aa59a]">
+    <section className="relative pb-16 md:pb-24 bg-gradient-to-br from-[#085078] to-[#4aa59a]">
+      
       <div className="absolute inset-0" style={{
         clipPath: "polygon(25% 0%, 100% 5%, 100% 95%, 75% 100%, 0 97%, 0 3%)",
         background: 'linear-gradient(135deg, rgba(8,80,120,0.95) 0%, rgba(74,165,154,0.95) 100%)'
       }}></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+      <Container className="relative z-10">
+      {/* <div className="container mx-auto px-4 relative z-10"> */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="w-full lg:w-1/2 space-y-8">
             <h2 className="font-montserrat text-5xl text-white font-bold leading-tight">
@@ -42,7 +44,8 @@ export default function Workflow() {
             />
           </div>
         </div>
-      </div>
+      {/* </div> */}
+      </Container>
     </section>
   );
 }

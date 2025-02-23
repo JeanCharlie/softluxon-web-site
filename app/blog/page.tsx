@@ -1,9 +1,9 @@
-import Contact from "@/components/pages/contact/Contact";
+import Blog from "@/components/pages/Blog/Blog";
 
 export default function ContactPage() {
   return (
     <main className="venice-blue">
-      <Contact />
+      <Blog />
     </main>
   );
 }

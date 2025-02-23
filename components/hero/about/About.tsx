@@ -1,8 +1,11 @@
+import { Container } from "@/components/ui/Container";
 import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <section className="container mx-auto px-4 py-16 md:py-24">
+    // <section className="container mx-auto px-4 py-16 md:py-24">
+    <section>
+      <Container className="pb-16 md:pb-24">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-16">
         <div className="w-full lg:w-1/2">
           <Image 
@@ -39,6 +42,7 @@ export default function AboutUs() {
           </button>
         </div>
       </div>
+      </Container>
     </section>
   );
 }

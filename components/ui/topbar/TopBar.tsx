@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { LinkIcon } from "@nextui-org/react";
 
 interface NavItem {
   name: string;
@@ -10,9 +12,9 @@ interface NavItem {
 
 const navigation: NavItem[] = [
   { name: "Inicio", href: "/" },
-  { name: "Servicios", href: "/servicios" },
-  { name: "Sobre nosotros", href: "/sobre-nosotros" },
-  { name: "Portafolio", href: "/portafolio" },
+  { name: "Servicios", href: "/services" },
+  { name: "Sobre nosotros", href: "/about-us" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
@@ -33,14 +35,14 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-screen z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/90 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
-      <div className="max-x-full">
-        <div className="flex items-center justify-between h-20">
+      <Container>
+        <div className="flex items-center w-full justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link 
@@ -48,7 +50,7 @@ export default function Navbar() {
               className={`text-2xl font-bold bg-gradient-to-r from-[#085078] to-[#4aa59a] 
                 ${scrolled ? 'text-transparent bg-clip-text' : 'text-white'}`}
             >
-              ALSOFTPRO
+              SOFTLUXON
             </Link>
           </div>
 
@@ -58,7 +60,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-lg font-medium transition-colors duration-200
+                className={`text-2xl font-medium transition-colors duration-200
                   ${
                     scrolled
                       ? "text-gray-800 hover:text-[#085078]"
@@ -68,7 +70,10 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <button
+            
+            <Link
+            href="/contact"
+
               className={`px-6 py-2.5 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:-translate-y-0.5
                 ${
                   scrolled
@@ -77,7 +82,8 @@ export default function Navbar() {
                 }`}
             >
               Contáctenos
-            </button>
+            </Link>
+            
           </div>
 
           {/* Mobile menu button */}
@@ -99,7 +105,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </div>
+      </Container>
 
       {/* Mobile menu */}
       <div
@@ -107,26 +113,29 @@ export default function Navbar() {
           isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
         }`}
       >
-        <div className="px-4 pt-2 pb-6 space-y-2">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-gray-50 rounded-lg"
-              onClick={() => setIsOpen(false)}
-            >
-              {item.name}
-            </Link>
-          ))}
-          <div className="px-4 pt-2">
-            <button
-              className="w-full px-6 py-3 rounded-lg text-lg font-semibold text-white bg-gradient-to-r from-[#085078] to-[#4aa59a] hover:shadow-lg transition-shadow"
-              onClick={() => setIsOpen(false)}
-            >
-              Contáctenos
-            </button>
+        <Container>
+          <div className="py-2 space-y-2">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block py-3 text-lg font-medium text-gray-800 hover:bg-gray-50 rounded-lg"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <div className="pt-4 py-4">
+              <Link
+              href="/contact"
+                className="w-full py-3 px-3 rounded-lg text-lg font-semibold text-white bg-gradient-to-r from-[#085078] to-[#4aa59a] hover:shadow-lg transition-shadow"
+                onClick={() => setIsOpen(false)}
+              >
+                Contáctenos
+              </Link>
+            </div>
           </div>
-        </div>
+        </Container>
       </div>
     </nav>
   );

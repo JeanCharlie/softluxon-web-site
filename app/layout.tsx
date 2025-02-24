@@ -1,29 +1,24 @@
-import { Inter as FontSans, Montserrat, Open_Sans } from "next/font/google";
-
 import { cn } from "@/lib/utils";
-
 import "./globals.css";
+import { montserrat, openSans } from "@/fonts/fonts";
+
 import TopBar from "@/components/ui/topbar/TopBar";
 import Footer from "@/components/ui/footer/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-});
-
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-open-sans",
-});
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body
         className={cn(
           "font-sans antialiased",

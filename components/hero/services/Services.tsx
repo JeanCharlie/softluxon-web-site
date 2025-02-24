@@ -7,8 +7,10 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { Container } from "../ui/Container";
+
 import Link from "next/link";
+import { Container } from "@/components/ui/Container";
+import { servicesHero as services  } from "@/consts/services";
 
 export default function Services() {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -24,33 +26,7 @@ export default function Services() {
     });
   }, [api]);
 
-  const services = [
-    {
-      title: "Desarrollo Web",
-      description: "Creamos sitios web modernos y responsivos",
-      icon: "🌐",
-    },
-    {
-      title: "Apps Móviles",
-      description: "Desarrollo de aplicaciones iOS y Android",
-      icon: "📱",
-    },
-    {
-      title: "Consultoría IT",
-      description: "Asesoramiento tecnológico especializado",
-      icon: "💡",
-    },
-    {
-      title: "Cloud Solutions",
-      description: "Servicios en la nube escalables",
-      icon: "☁️",
-    },
-    {
-      title: "Seguridad",
-      description: "Protección de datos y sistemas",
-      icon: "🔒",
-    },
-  ];
+  
 
   return (
     <section>

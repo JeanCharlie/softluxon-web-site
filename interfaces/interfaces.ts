@@ -24,3 +24,17 @@ export interface BlogPost {
   readTime: string;
   image: string;
 }
+
+export interface ServiceFeature {
+  title: string;
+  description: string;
+}
+
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  features: ServiceFeature[];
+  image: string;
+}

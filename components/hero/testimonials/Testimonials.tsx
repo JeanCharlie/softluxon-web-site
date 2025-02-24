@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { clients } from "@/app/utils/constants/consts";
+
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { clients } from "@/consts/clients";
 
 export default function Testimonials() {
   const [api, setApi] = React.useState<CarouselApi>();

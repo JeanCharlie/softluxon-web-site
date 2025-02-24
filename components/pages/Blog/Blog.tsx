@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { blogPosts, categories } from "@/consts/blog";

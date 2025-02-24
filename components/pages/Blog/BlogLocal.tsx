@@ -7,7 +7,7 @@ import { Hero } from "./blog-section/hero/Hero";
 import { CategoryFilter } from "./blog-section/categories/CategoryFilter";
 import { BlogPostList } from "./blog-section/post-list/BlogPostList";
 
-export default function Blog() {
+export default function BlogLocal() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
 
   const filteredPosts =

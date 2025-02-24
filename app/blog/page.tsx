@@ -1,6 +1,6 @@
-import TechNews from "@/components/pages/blog/TechNews";
+import TechNews from "@/components/pages/tech-news/TechNews";
 
-export default function BlogPage() {
+export default function TechNewsPage() {
   return (
     <main className="venice-blue">
       <TechNews />

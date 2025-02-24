@@ -10,3 +10,17 @@ export interface Milestone {
   title: string;
   description: string;
 }
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  author: {
+    name: string;
+    image: string;
+  };
+  date: string;
+  readTime: string;
+  image: string;
+}

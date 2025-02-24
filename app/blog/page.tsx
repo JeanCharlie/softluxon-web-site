@@ -1,4 +1,4 @@
-import Blog from "@/components/pages/Blog/Blog";
+import Blog from "@/components/pages/blog/Blog";
 
 export default function ContactPage() {
   return (

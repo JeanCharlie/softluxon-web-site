@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export default function AboutUs() {
   return (
-    // <section className="container mx-auto px-4 py-16 md:py-24">
     <section>
       <Container className="pb-16 md:pb-24">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-16">

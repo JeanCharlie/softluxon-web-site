@@ -16,7 +16,6 @@ export default function Workflow() {
         }}
       ></div>
       <Container className="relative z-10">
-        {/* <div className="container mx-auto px-4 relative z-10"> */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="w-full lg:w-1/2 space-y-8">
             <h2 className="font-montserrat text-5xl text-white font-bold leading-tight">
@@ -50,7 +49,6 @@ export default function Workflow() {
             />
           </div>
         </div>
-        {/* </div> */}
       </Container>
     </section>
   );
